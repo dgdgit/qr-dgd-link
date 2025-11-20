@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Đang chuyển hướng...</title>
+<script type="text/javascript">
+    function redirect() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // 1. Kiểm tra Android
+        if (/android/i.test(userAgent)) {
+            window.location.replace("https://play.google.com/store/apps/details?id=com.dgd.app");
+        }
+        // 2. Kiểm tra iOS (iPhone/iPad/iPod)
+        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.replace("https://apps.apple.com/vn/app/dgd/id6497876473");
+        }
+        // 3. Các trường hợp khác (PC, Laptop...)
+        else {
+            window.location.replace("https://dgd.vn");
+        }
+    }
+    // Thực hiện chuyển hướng ngay khi tải trang
+    window.onload = redirect;
+</script>
+</head>
+<body>
+    <p style="text-align:center; margin-top: 50px; font-family: sans-serif;">
+        Đang đưa bạn đến trang tải ứng dụng DGD...<br>
+        Nếu không tự động chuyển, <a href="https://dgd.vn">bấm vào đây</a>.
+    </p>
+</body>
+</html>
