@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Đang chuyển hướng...</title>
-<script type="text/javascript">
-    function redirect() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Đang chuyển hướng đến DGD...</title>
+    <meta name="description" content="Tải ứng dụng DGD ngay để trải nghiệm.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dgd.vn/">
+    <meta property="og:title" content="Tải ứng dụng DGD">
+    <meta property="og:description" content="Bấm vào đây để tải ứng dụng DGD cho điện thoại của bạn.">
+    <meta property="og:image" content="https://media.dgd.vn/assets/editor/111c68e1-c807-47b0-9bf3-955391ecdb9a.png">
 
-        // 1. Kiểm tra Android
-        if (/android/i.test(userAgent)) {
-            window.location.replace("https://play.google.com/store/apps/details?id=com.dgd.app");
+    <link rel="icon" href="https://media.dgd.vn/assets/editor/111c68e1-c807-47b0-9bf3-955391ecdb9a.png" type="image/png">
+
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
         }
-        // 2. Kiểm tra iOS (iPhone/iPad/iPod)
-        else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            window.location.replace("https://apps.apple.com/vn/app/dgd/id6497876473");
+        .logo {
+            width: 100px; /* Điều chỉnh kích thước logo hiển thị */
+            height: auto;
+            margin-bottom: 20px;
         }
-        // 3. Các trường hợp khác (PC, Laptop...)
-        else {
-            window.location.replace("https://dgd.vn");
+        .message {
+            text-align: center;
+            color: #333;
+            padding: 0 20px;
         }
-    }
-    // Thực hiện chuyển hướng ngay khi tải trang
-    window.onload = redirect;
-</script>
+        a { color: #007bff; text-decoration: none; font-weight: bold; }
+    </style>
+
+    <script type="text/javascript">
+        function redirect() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // 1. Kiểm tra Android
+            if (/android/i.test(userAgent)) {
+                window.location.replace("https://play.google.com/store/apps/details?id=com.dgd.app");
+            }
+            // 2. Kiểm tra iOS (iPhone/iPad/iPod)
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.replace("https://apps.apple.com/vn/app/dgd/id6497876473");
+            }
+            // 3. Các trường hợp khác (PC, Laptop...)
+            else {
+                window.location.replace("https://dgd.vn");
+            }
+        }
+        // Thực hiện chuyển hướng ngay khi tải trang
+        window.onload = redirect;
+    </script>
 </head>
 <body>
-    <p style="text-align:center; margin-top: 50px; font-family: sans-serif;">
-        Đang đưa bạn đến trang tải ứng dụng DGD...<br>
-        Nếu không tự động chuyển, <a href="https://dgd.vn">bấm vào đây</a>.
-    </p>
+    <img src="https://media.dgd.vn/assets/editor/111c68e1-c807-47b0-9bf3-955391ecdb9a.png" alt="Logo DGD" class="logo">
+
+    <div class="message">
+        <p>
+            Đang đưa bạn đến trang tải ứng dụng DGD...<br>
+            Nếu không tự động chuyển, <a href="https://dgd.vn">Bấm vào đây</a>.
+        </p>
+    </div>
 </body>
 </html>
